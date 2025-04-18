@@ -14,4 +14,6 @@
     - LLM/ Human feedback - Try to implement the feedback loop like chatGPT has thumbsup/down symbols.
 
 
+## sample screenshots
+
 ![App Screenshot](assets/frontend.png)
