@@ -16,7 +16,7 @@ if 'submitted_query' not in st.session_state:
     st.session_state.submitted_query = ""
 
 # Input
-user_query = st.text_input("Enter your natural language query:", value=st.session_state.submitted_query)
+user_query = st.text_area("Enter your natural language query:", value=st.session_state.submitted_query, height=150)
 
 # Submit button
 if st.button("Submit"):
@@ -46,3 +46,11 @@ if st.session_state.result:
 
     st.caption(f"👍 Helpful: {st.session_state.thumbs_up}")
     st.caption(f"👎 Not Helpful: {st.session_state.thumbs_down}")
+
+st.markdown("""
+<hr style="border:1px solid #ccc" />
+
+<p style='text-align: center; color: gray; font-size: 0.9em;'>
+© 2025 vamshavardhan reddy kotha. All rights reserved.
+</p>
+""", unsafe_allow_html=True)

@@ -115,8 +115,16 @@ def run_agent(nlq: str):
     # input_text = f"Question: {nlq}\nAnswer: {response}"
     # explained = agent.run_tool("explain_answer", input_text)
     # Now enhance the answer with explanation:
-    explanation_prompt = f"""Rephrase this answer in a full sentence that includes the question context.\n\nQuestion: {nlq}\nAnswer: {response} 
-                        and always try to present the output in table format too"""
+    # explanation_prompt = f"""Rephrase this answer in a full sentence that includes the question context.\n\nQuestion: {nlq}\nAnswer: {response}
+    #                     and always try to present the output in table format too if possible """
+
+    explanation_prompt = f"""Rephrase this answer in a full sentence that includes the question context.
+
+                    Question: {nlq}
+                    Answer: {response}
+
+                    If the response contains structured data, present it in a table format. If not, just provide the full sentence without mentioning the table format."""
+
     explained_answer = agent.run(explanation_prompt)
     print("inside run agent +++++++++++++++++ ", explained_answer)
     return explained_answer
